@@ -72,6 +72,7 @@ if(message.slice(7,8) === "a"){
 if(message.slice(-3) === "no!"){
     console.log(message.slice(-3));
 }
+console.log(message.slice(-3) === "no!");
 
 // Check and log whether the last 5 character in message is "no!" or not
 
@@ -79,6 +80,8 @@ if(message.slice(-5) === "no!"){
     console.log(message.slice(-5));
 }
 
+
+console.log(message.slice(-5) === "no!");
 // Log the message variable, all in lowecase
 
 console.log(message.toLowerCase(""));
@@ -89,7 +92,9 @@ console.log(message.toUpperCase(""));
 
 // Replace the word "are" to "can't", store it in a new variable named `newMessage` and log it.
 
-console.log(message.replace("are","can't"));
+let newMessage = message.replace("are","can't")
+console.log(newMessage);
+
 
 // Replace the word "still" to "" (empty) using newMessage variable, and re-assign the output to the variable `newMessage` and log it.
 
@@ -117,4 +122,6 @@ const newArray = message.split("");
 
 // Log all the words of messageArray
 
-console.log(messageArray)
+for(let word of messageArray){
+console.log(word);
+}
