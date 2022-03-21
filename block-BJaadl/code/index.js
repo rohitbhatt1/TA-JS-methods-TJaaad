@@ -22,7 +22,11 @@ let newLength = words.map((w) => w.length);
 console.log(newLength);
 
 // - Create a new array that only contains word with atleast one vowel.
-
+function checkVowel(words){
+  return words.toLowerCase().includes("a")||words.toLowerCase().includes("e")||words.toLowerCase().includes("a")||
+  words.toLowerCase().includes("i")||words.toLowerCase().includes("u")
+}
+let vowelFilter = words.filter((w) => checkVowel(w));
 
 // - Find the index of the word "rhythm"
 console.log(words.indexOf("rhythm"));
@@ -32,10 +36,9 @@ console.log(words.indexOf("rhythm"));
 function checkVowel(elm) {
   return elm.toLowerCase().includes("a") || elm.toLowerCase().includes("e") ||elm.toLowerCase().includes("i") ||elm.toLowerCase().includes("o") ||elm.toLowerCase().includes("u") 
 }
-undefined
-
-let newVowel = words.filter( elm => checkVowel(elm));
+let newVowel = words.filter( elm => checkVowel(elm[elm.lenth -1]));
 // - Create a new array that contianse   words not ending with vowel
+let notENdingWithVowel = words.filter((w) => !checkVowel(w)[w.length-1]);
 
 let numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
@@ -67,6 +70,16 @@ let sortArray = numbers.sort((a,b) => a-b)
 let sum = numbers.reduce((a,b) => a+b,0);
 //- Write a function averageNumbers that receives an array of numbers and calculate the average of the numbers
 
+function averageNumbers(array){
+return(
+  array.reduce((acc,cv)=> {
+    acc = acc + cv;
+    return acc;
+  },0)/ array.length
+)
+
+}
+
 let strings = [
   'seat',
   'correspond',
@@ -82,3 +95,12 @@ let strings = [
 
 
 // - Write a function averageWordLength that receives an array of words2 and calculate the average length of the words.
+
+function averageWordLength(array){
+return(words.map((w) => w.length).reduce
+ ((acc,cv)=> {
+  acc = acc + cv;
+  return acc;
+},0)/ array.length
+);
+}
