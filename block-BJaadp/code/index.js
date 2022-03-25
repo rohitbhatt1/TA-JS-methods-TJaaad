@@ -53,7 +53,7 @@ let highhestMaleGrade =persons.filter((person)=> person.sex === "M").map((person
 
 // Find the highest grade in female
 
-let highhestFeMaleGrade = persons.filter((person) => person.sex === "F").map((person) => person.grade).sort((a,b) => a-b).pop();
+let highhestFeMale = persons.filter((person) => person.sex === "F").map((person) => person.grade).sort((a,b) => a-b).pop();
 
 // Find the highest grade for people whose name starts with 'J' or 'P'
 
@@ -125,6 +125,7 @@ const data = [
 
 
 // Using reduce flat data array
+
 
 const dataTwo = [
   [1, 2, 3],
