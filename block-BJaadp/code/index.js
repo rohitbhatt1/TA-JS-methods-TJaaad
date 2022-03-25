@@ -17,17 +17,48 @@ let persons = [
 
 // Find the average grade
 
+let personsL = persons.length;
+let averageGrade = persons.reduce((acc,cv) => {
+   return acc + cv.grade
+},0);
+
+console.log(averageGrade/personsL);
+
 // Find the average grade of male
+
+let maleGrade = persons.filter((male) => male.sex === "M").reduce
+((acc ,cv) => {
+  return acc + cv.grade
+},0)/personsL
+;
 
 // Find the average grade of female
 
+let femaleGrade = persons.filter((female) => female.sex === "F").reduce
+((acc ,cv) => {
+  return acc + cv.grade
+},0)/personsL
+;
+
+
 // Find the highest grade
+
+let highhestGrade = persons.map((person) => person.grade).sort((a,b) => a-b).pop();
 
 // Find the highest grade in male
 
+
+let highhestMaleGrade =persons.filter((person)=> person.sex === "M").map((person) => person.grade)
+.sort((a,b) => a-b).pop();
+
 // Find the highest grade in female
 
+let highhestFeMaleGrade = persons.filter((person) => person.sex === "F").map((person) => person.grade).sort((a,b) => a-b).pop();
+
 // Find the highest grade for people whose name starts with 'J' or 'P'
+
+
+let highhestNameWithJ = persons.filter((person) => person.name.startsWith("J")).map((person) => person.grade).sort((a,b) => a-b).pop();
 
 const fruitBasket = [
   'banana',
@@ -52,6 +83,17 @@ Output:
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
 
+
+let fruitsObj = fruitBasket.reduce((acc,cv) =>{
+  if(acc[cv]){
+      acc[cv] = acc[cv] + 1;
+  }else{
+      acc[cv] = 1;
+  }
+   return acc;      
+   },{});
+
+
 /* 
 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
@@ -62,12 +104,25 @@ Output:
 [['banana', 2], ['cherry', 3], ['orange', 3], ['apple', 2], ['fig', 1]]
 */
 
+let fruitsArray = fruitBasket.reduce((acc,cv) =>{
+  if(acc[cv]){
+      acc[cv] = acc[cv] + 1;
+  }else{
+      acc[cv] = 1;
+  }
+   return acc;      
+   },[]);
+
+
+
+
 const data = [
   [1, 2, 3],
   [4, 5, 6],
   [7, 8, 9],
   [10, 11, 12],
 ];
+
 
 // Using reduce flat data array
 
