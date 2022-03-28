@@ -10,11 +10,11 @@ function countAllPeople() {
 
 
 function peopleByHouses() {
-  let final = {};
+  let obj = {};
   got.houses.forEach(house => {
-    final[house.name] = house.people.length
+    obj[house.name] = house.people.length
   });
-  return final;
+  return obj;
 }
 
 function everyone() {
@@ -27,16 +27,16 @@ function everyone() {
 }
 
 function nameWithS() {
-  allpeople = everyone();
+  let allpeople = everyone();
   return allpeople.filter((name) => 
-  name.toLoweecase().includes("s"))
+  name.toLowercase().includes("s"))
 }
 
 
 function nameWithA() {
-  allpeople = everyone();
+   let allpeople = everyone();
   return allpeople.filter((name) => 
-  name.toLoweecase().includes("A"))
+  name.toLowercase().includes("a"))
 }
 
 function surnameWithS() {
