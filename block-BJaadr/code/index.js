@@ -1,35 +1,81 @@
 // NOTE: You can only use the (reduce) array method to solve this exercise:
 
 function countAllPeople() {
-  // your code goes here
+  return got.houses.reduce((acc,cv)=>{
+    acc += cv.people.length;
+    return acc;
+  },0)
 }
+
 
 function peopleByHouses() {
-  // your code goes here
+   return got.houses.reduce((acc,house)=>{
+     acc[house.name] += house.people.length;
+   return acc;
+   },{});
+   return acc;
 }
 
+
 function everyone() {
-  // your code goes here
+  return got.houses.reduce((acc,v)=>
+  {acc.push[v.people.filter((e)=> {
+    acc.push(e.name)
+  })]},[]) 
 }
 
 function nameWithS() {
   // your code goes here
+  let every = got.houses.reduce((acc,v)=>{
+    v.people.forEach( e =>{
+      if ( e.name.toLowerCase().includes("s") ){
+        acc.push(e.name)
+      }
+    })
+    return acc
+  },[])
+    return every;
 }
 
 function nameWithA() {
-  // your code goes here
+  let every = got.houses.reduce((acc,v)=>{
+    v.people.forEach( e =>{
+      if ( e.name.toLowerCase().includes("a") ){
+        acc.push(e.name)
+      }
+    })
+    return acc
+  },[])
+    return every;
+
 }
 
 function surnameWithS() {
-  // your code goes here
+  return everyone().reduce((acc,cv) => {
+    if(cv.split(' ')[1].toLowerCase().startsWith('s')){
+      acc.push(cv)
+    }
+    return acc;
+  },[])
+  
 }
 
 function surnameWithA() {
   // your code goes here
+  return everyone().reduce((acc,cv) => {
+    if(cv.split(' ')[1].toLowerCase().startsWith('a')){
+      acc.push(cv)
+    }
+    return acc;
+  },[])
+
 }
 
 function peopleNameOfAllHouses() {
-  // your code goes here
+  return got.houses.reduce((acc,cv) => {
+    acc[cv.name] = cv.people.map((person) => person.name)
+    return acc;
+  },{})
 }
 
 // Testing your result after writing your function
